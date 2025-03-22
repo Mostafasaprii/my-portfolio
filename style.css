@@ -1,0 +1,128 @@
+/* استايل عام */
+body {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    text-align: center;
+    background: linear-gradient(to right, #141E30, #243B55);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* القائمة الرئيسية */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background-color: #007BFF;
+    border-radius: 8px;
+}
+
+/* الأقسام */
+.section {
+    display: none;
+    padding: 100px 20px;
+    margin-top: 60px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+/* عند تفعيل القسم */
+.section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* معرض الأعمال */
+.work-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.work-item {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.work-item:hover {
+    transform: scale(1.05);
+}
+
+/* تحسين الصور */
+img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* زر الموقع البرمجي */
+.btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* تحسين التوافق مع الجوال */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .work-gallery {
+        flex-direction: column;
+    }
+
+    .work-item {
+        width: 90%;
+    }
+}
